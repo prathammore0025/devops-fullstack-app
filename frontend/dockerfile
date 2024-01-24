@@ -1,6 +1,6 @@
-FROM ubuntu
+FROM centos
 
-RUN  apt install git -y
+RUN  yum install git -y
      git clone https://github.com/prathammore0025/devops-fullstack-app.git
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash \
     && . ~/.nvm/nvm.sh \
