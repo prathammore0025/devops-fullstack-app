@@ -7,4 +7,4 @@ WORKDIR /root/devops-fullstack-app/frontend
 RUN npm install \ &&
     npm start
 EXPOSE 3000
-CMD ["node", "/src/App.js"]
+CMD ["node", "start"]
