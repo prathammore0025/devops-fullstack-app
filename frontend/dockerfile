@@ -1,10 +1,19 @@
 FROM ubuntu
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
-    && git clone https://github.com/prathammore0025/devops-fullstack-app.git \
-    && source ~/.bashrc \
-    && nvm install 18.17.0
-WORKDIR /root/devops-fullstack-app/frontend
-RUN npm install \ &&
-    npm start
+
+RUN git clone https://github.com/shubhamkalsait/devops-fullstack-app.git
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash \
+    && . ~/.nvm/nvm.sh \
+    && nvm install node 
+    
+
+WORKDIR /root/devops-fullstack-app/frontend/
+
+# Install or update npm
+
+RUN npm install  
+
 EXPOSE 3000
-CMD ["node", "start"]
+
+# CMD specifies the default command to run on startup
+CMD ["npm", "start"]
+
